@@ -596,7 +596,7 @@ html{
       }
 
       .vdark{
-        color:white;
+        color: white !important;;
       }
 
       .vlight:visited{
