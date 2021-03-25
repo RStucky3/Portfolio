@@ -26,17 +26,25 @@ const p2a = document.querySelectorAll(".p2a");
 const p2b = document.querySelectorAll(".p2b");
 const list = document.querySelectorAll(".Project-list");
 let count = 0;
-
+localStorage.setItem("isDay", "dag");
 const today = new Date();
 
 const time = today.getHours();
-
-if(time>=18 || time<=6 || count ==1){
+console.log(localStorage.getItem("isDay"));
+if(time>=18 || time<=6 || localStorage.getItem("isDay")=="nacht"){
 	dayswitch();
 	document.getElementById("checkbox").checked = true;
 }
 
 function dayswitch(){
+
+	if(localStorage.getItem("isDay")=="dag"){
+		localStorage.setItem("isDay", "nacht");
+	}
+	else{
+		localStorage.setItem("isDay", "dag");
+	}
+	console.log(localStorage.getItem("isDay"));
 	if(count==1){
 		document.body.style.backgroundColor = "";
 		for(let i = 0; i<hr.length; i++){
