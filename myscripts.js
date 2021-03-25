@@ -26,14 +26,79 @@ const p2a = document.querySelectorAll(".p2a");
 const p2b = document.querySelectorAll(".p2b");
 const list = document.querySelectorAll(".Project-list");
 let count = 0;
-localStorage.setItem("isDay", "dag");
+
 const today = new Date();
 
 const time = today.getHours();
 console.log(localStorage.getItem("isDay"));
 if(time>=18 || time<=6 || localStorage.getItem("isDay")=="nacht"){
-	dayswitch();
+	localeStorageCell();
 	document.getElementById("checkbox").checked = true;
+}
+function localeStorageCell(){
+
+	if(count==1){
+		document.body.style.backgroundColor = "";
+		for(let i = 0; i<hr.length; i++){
+			hr[i].style.borderColor = "";
+		}
+		count = 0;
+	}
+	else{
+		document.body.style.backgroundColor = "black";
+		for(let i = 0; i<hr.length; i++){
+			hr[i].style.borderColor = "white";
+		}
+		count++;
+	}
+	if(punt){punt.classList.toggle("TableDark");}
+	if(punt2){punt2.classList.toggle("TableDark");}
+	if(textbox){textbox.classList.toggle("BGdark");}
+	if(header){header.classList.toggle("BGBlack");}
+	if(navigation){navigation.classList.toggle("BGBlack");}
+	if(navigationl){navigationl.classList.toggle("BGBlack");}
+	if(contactbutton){contactbutton.classList.toggle("BGdark")}
+	if(contact){contact.classList.toggle("BGdark")}
+	if(contactForm){contactForm.classList.toggle("contactFormDark")}
+	if(muted){muted.classList.toggle("Tdark");}
+	if(talen){talen.classList.toggle("talenDark");}
+
+	for(let i = 0; i<text.length; i++){
+		if(text[i]){text[i].classList.toggle("Tdark");}
+	}
+
+	for(let i = 0; i<navigationText.length; i++){
+		navigationText[i].style.borderColor = "white";
+	}
+
+	for(let i = 0; i<navigationText.length; i++){
+		if(navigationText[i]){navigationText[i].classList.toggle("Tdark");}
+		if(navigationText[i]){navigationText[i].classList.toggle("vdark");}	
+	}
+	
+	for(let i = 0; i<menubutton.length; i++){
+		if(menubutton[i]){menubutton[i].classList.toggle("lineDark");}	
+	}
+
+	for(let i = 0; i<contactinput.length; i++){
+		if(contactinput[i]){contactinput[i].classList.toggle("contactFormInput");}	
+	}
+
+	for(let i = 0; i<beroepen.length; i++){
+		if(beroepen[i]){beroepen[i].classList.toggle("beroepenDark");}
+	}
+
+	for(let i = 0; i<p2a.length; i++){
+		if(p2a[i]){p2a[i].classList.toggle("p2aDark");}
+	}
+
+	for(let i = 0; i<p2b.length; i++){
+		if(p2b[i]){p2b[i].classList.toggle("p2bDark");}
+	}
+
+	for(let i = 0; i<list.length; i++){
+		if(list[i]){list[i].classList.toggle("Project-list-Dark");}
+	}
 }
 
 function dayswitch(){
