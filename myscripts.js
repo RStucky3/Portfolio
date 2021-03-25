@@ -1,7 +1,7 @@
-var nav = document.getElementById("topNav");
-var main = document.getElementById("main");
-var menu = document.getElementsByClassName("menuitems");
-var close = document.getElementById("closebtn");
+const nav = document.getElementById("topNav");
+const main = document.getElementById("main");
+const menu = document.getElementsByClassName("menuitems");
+const close = document.getElementById("closebtn");
 
 document.getElementById("checkbox").addEventListener("click", dayswitch);
 
@@ -27,11 +27,11 @@ const p2b = document.querySelectorAll(".p2b");
 const list = document.querySelectorAll(".Project-list");
 let count = 0;
 
-var today = new Date();
+const today = new Date();
 
-var time = today.getHours();
+const time = today.getHours();
 
-if(time>=18){
+if(time>=18 || time<=6 || count ==1){
 	dayswitch();
 	document.getElementById("checkbox").checked = true;
 }
@@ -109,7 +109,7 @@ main.style.marginTop = "50px";
 for (i = 0; i < menu.length; i++){menu[i].style.marginTop="100px";};
 
 close.addEventListener("click", function(){
-  var menuIcon = close.children;
+  let menuIcon = close.children;
   for (i = 0; i < menuIcon.length; i++){
   menuIcon[i].classList.toggle("active");
   }   
@@ -121,7 +121,7 @@ function navToggle() {
 	nav.style.height = "50px";
 	main.style.marginTop = "50px";
 	
-    	var i = 0;
+	let i = 0;
     	for (i = 0; i < menu.length; i++){
 	menu[i].style.opacity="0.0";    
 	menu[i].style.marginTop="100px";
@@ -151,7 +151,7 @@ function navToggle() {
 };
 
 function validateName() {
-	var name = document.getElementById('name').value;
+	const name = document.getElementById('name').value;
 	if(name.length == 0) {
 	  return false;
 
@@ -164,7 +164,7 @@ function validateName() {
   }
 
   function validateSurname() {
-	var surname = document.getElementById('surname').value;
+	const surname = document.getElementById('surname').value;
 	if(surname.length == 0) {
 	  return false;
 	}
@@ -173,7 +173,7 @@ function validateName() {
 
  function validateEmail () {
 
-  var email = document.getElementById('email').value;
+  const email = document.getElementById('email').value;
   if(email.length == 0) {
 	return false;
 
@@ -187,7 +187,7 @@ function validateName() {
 }
 
 function validateNeed() {
-	var need = document.getElementById('need').value;
+	const need = document.getElementById('need').value;
 	if(need.length == 0) {
 	  return false;
 	}
@@ -196,7 +196,7 @@ function validateNeed() {
  }
 
  function validateMessage() {
-	var message = document.getElementById('message').value;
+	const message = document.getElementById('message').value;
 	if(message.length == 0) {
 	  return false;
 	}
